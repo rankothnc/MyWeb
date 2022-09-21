@@ -11,7 +11,14 @@ const [review, setReview]=useState('');
 const submitReview = () =>{
   //post request on axios
   //backend URL
-  Axios.post("");
+  Axios.post("http://localhost:3001/api/insert", {
+    //sending an object with the movie name and review to grab that in the backend
+    movieName: movieName, 
+    movieReview: review
+  }).then(()=>{
+    alert("Successful insert")
+  });
+  //create a promise after inserting data
 }
 
   return (
